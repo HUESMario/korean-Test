@@ -82,7 +82,6 @@ const extractNumber = (word) => Number(word.split(' ')[1]);
 
 
 const maximumCount = document.querySelector('#maximumCount');
-let elementCount = 0;
 const chosenWords = [];
 const sortArr = arr => {
     for(let i = 0; i < arr.length; ++i)
@@ -141,6 +140,10 @@ for(let i = 0; i < maximumTests; ++i)
             chosenWords.push(rndmTest);
             localStorage.setItem(rndmTest, words[`word ${rndmTest}`]);
             test = div(words[`word ${rndmTest}`], rndmNum, rndmTest);
+        }
+        else
+        {
+            rndmTest = null;
         }
         testSection.append(test);
     }while(!numExists(chosenWords, rndmTest))
